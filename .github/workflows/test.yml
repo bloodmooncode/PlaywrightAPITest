@@ -14,7 +14,10 @@ jobs:
       - run: echo "$(pwd)"
       - run: echo "$(ls)"
       - run: npx playwright test tests/Local_login.spec.js
-      - run: echo "Test scripte should be launched here."
+      - uses: actions/upload-artifact@v2
+        with:
+          name: report.html
+          path: playwright-report/index.html
   # deploy:
   #   name: Deploy
   #   runs-on: ubuntu-latest
