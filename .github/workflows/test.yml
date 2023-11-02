@@ -1,4 +1,4 @@
-name: Deploy to Fly (Test)
+name: Run test
 on: [workflow_dispatch]
 jobs:
   test:
@@ -11,7 +11,7 @@ jobs:
           node-version: v20.8.0
       - run: echo "Current branch is ${{ github.ref }}"
       - run: npm install --legacy-peer-deps
-      - run: npx playwright test ./test/Local_login.spec.js
+      - run: npx playwright test test/Local_login.spec.js
       - run: echo "Test scripte should be launched here."
   # deploy:
   #   name: Deploy
