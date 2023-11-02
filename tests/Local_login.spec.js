@@ -14,12 +14,5 @@ test("Local login", async ({ request }) => {
     },
   });
 
-  const invalidJson = await response.json();
-  const fixedJson = JSON.stringify(invalidJson);
-  const data = JSON.parse(fixedJson);
-  // console.log(data);
-  const jwt = data.jwt;
-  token = jwt;
-  // console.log(jwt);
   expect(response.status()).toBe(200);
 });
