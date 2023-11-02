@@ -11,6 +11,8 @@ jobs:
           node-version: v20.8.0
       - run: echo "Current branch is ${{ github.ref }}"
       - run: npm install --legacy-peer-deps
+      - run: echo "$(pwd)"
+      - run: echo "$(ls)"
       - run: npx playwright test test/Local_login.spec.js
       - run: echo "Test scripte should be launched here."
   # deploy:
